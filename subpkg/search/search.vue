@@ -61,6 +61,7 @@ export default {
       this.searchResults = res.message
 
     },
+    // 监听输入框事件
     input ( e ) {
       clearTimeout( this.timer )
       this.timer = setTimeout( () => {
@@ -70,11 +71,13 @@ export default {
 
       }, 1000 )
     },
+    // 跳转右侧详情页面
     gotoDetail ( goods_id ) {
       uni.navigateTo( {
         url: '/subpkg/goods_detail/goods_detail?goods_id=' + goods_id
       } )
     },
+    // 历史记录
     saveSearchHistory () {
       const set = new Set( this.historyList )
       set.delete( this.kw )
